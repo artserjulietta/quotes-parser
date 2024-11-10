@@ -26,7 +26,7 @@ def get_all_quotes():
                     # Информация о каждой цитате будет храниться в отдельном словаре
                     quote_dict = {}
                     # Получаем текст цитаты и добавляем его в словарь по ключу "quote"
-                    quote_text = quote.find('span', class_='text').get_text().strip('“”')
+                    quote_text = quote.find('span', class_='text').get_text().strip('“”') # Используем strip('“”') для удаления лишних символов кавычек в начале и конце цитаты
                     quote_dict["quote"] = quote_text
                     # Получаем информацию об авторе (имя и ссылку) и добавляем его в словарь по ключу "author", в качестве значения будет словрарь с ключами "name" и "link" 
                     author_name = quote.find('small', class_='author').get_text() 
