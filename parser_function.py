@@ -4,6 +4,7 @@ import json
 
 # Функция для парсинга цитат
 def get_all_quotes(): 
+    
     # Создаем пустой список, который будет являться результатом парсинга
     data = []
     # Цикл позволяет перебрать все страницы с цитатами (всего на сайте прдеставлено 10 страниц)
@@ -25,10 +26,10 @@ def get_all_quotes():
                     # Информация о каждой цитате будет храниться в отдельном словаре
                     quote_dict = {}
                     # Получаем текст цитаты и добавляем его в словарь по ключу "quote"
-                    quote_text = quote.find('span', class_='text').get_text().strip()
+                    quote_text = quote.find('span', class_='text').get_text().strip('“”')
                     quote_dict["quote"] = quote_text
                     # Получаем информацию об авторе (имя и ссылку) и добавляем его в словарь по ключу "author", в качестве значения будет словрарь с ключами "name" и "link" 
-                    author_name = quote.find('small', class_='author').get_text().strip()
+                    author_name = quote.find('small', class_='author').get_text() 
                     author_link = quote.find('a').get('href')
                     quote_dict["author"] = {
                                             'name' : author_name,
