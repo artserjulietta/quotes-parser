@@ -38,7 +38,7 @@ def get_all_quotes():
                     # Получаем теги цитаты и добавляем их в словарь по ключу "tags"
                     tags = quote.find_all('a', class_='tag')
                     tags = [{
-                                "tag" : tag.text, 
+                                "tag" : tag.get_text(), 
                                 "link" : tag.get('href')
                              } 
                              for tag in tags]
