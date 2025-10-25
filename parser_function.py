@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+# блаблабла
+
 # Функция для парсинга цитат
 def get_all_quotes(): 
     
